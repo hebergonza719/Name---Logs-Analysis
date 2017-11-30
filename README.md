@@ -20,7 +20,13 @@ This python program is a reporting tool that summerizes data from an SQL databas
 * logs_analysis_output.txt
 
 ## How to Run
-
+1. Install VirtualBox and Vagrant.
+2. Download [newsdata.zip](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip) and unzip it.
+3. Put newsdata.sql into the vagrant directory.
+4. Then, cd into the vagrant directory and use the command psql -d news -f newsdata.sql.
+5. Connect to the 'news' database.
+6. Create the views provided in this document.
+7. Then run logs_analysis.py in the same directory where the 'news' database is located.
 
 ## Views Created
 These were the views created within the database.
