@@ -26,30 +26,30 @@ This python program is a reporting tool that summerizes data from an SQL databas
 These were the views created within the database.
 ```SQL
 CREATE VIEW popular_articles AS
-SELECT articles.author, title, count(*) as views
-FROM articles, log
-WHERE path = concat('/article/',slug)
-GROUP BY author, title
-ORDER BY views DESC
-LIMIT 8;
+  SELECT articles.author, title, count(*) as views
+  FROM articles, log
+  WHERE path = concat('/article/',slug)
+  GROUP BY author, title
+  ORDER BY views DESC
+  LIMIT 8;
 ```
 ```SQL
 CREATE VIEW status_all AS
-SELECT date(time), status
-FROM log;
+  SELECT date(time), status
+  FROM log;
 ```
 ```SQL
 CREATE VIEW status_error AS
-SELECT date, count(*) as status_error
-FROM status_all
-WHERE status = '404 NOT FOUND'
-GROUP BY date
-ORDER BY date;
+  SELECT date, count(*) as status_error
+  FROM status_all
+  WHERE status = '404 NOT FOUND'
+  GROUP BY date
+  ORDER BY date;
 ```
 ```SQL
 CREATE VIEW status_complete AS
-SELECT date, count(*) AS total
-FROM status_all
-GROUP BY date
-ORDER BY date;
+  SELECT date, count(*) AS total
+  FROM status_all
+  GROUP BY date
+  ORDER BY date;
 ```
