@@ -32,12 +32,12 @@ ORDER BY date;
 '''
 
 query_1 = """SELECT title, count(*) AS views
-    FROM articles, log
-    WHERE path = concat('/article/',slug)
-    GROUP BY title
-    ORDER BY views DESC
-    LIMIT 3;
-    """
+    	FROM articles, log
+    	WHERE path = concat('/article/',slug)
+    	GROUP BY title
+    	ORDER BY views DESC
+    	LIMIT 3;
+    	"""
 
 query_2 = """SELECT authors.name, 
 	sum(popular_articles.views) AS views
